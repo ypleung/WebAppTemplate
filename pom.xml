@@ -118,28 +118,6 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.1</version>
         </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.18.1</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>2.6</version>
-        </plugin>
-<!-- openejb
-        <plugin>
-          <groupId>org.apache.openejb.maven</groupId>
-          <artifactId>tomee-maven-plugin</artifactId>
-          <version>1.7.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.openjpa</groupId>
-          <artifactId>openjpa-maven-plugin</artifactId>
-          <version>${version.openjpa}</version>
-        </plugin>
--->
       </plugins>
     </pluginManagement>
 
@@ -152,18 +130,7 @@
           <target>1.7</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
-<!--
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-eclipse-plugin</artifactId>
@@ -172,46 +139,10 @@
           <downloadSources>true</downloadSources>
           <downloadJavadocs>true</downloadJavadocs>
           <wtpversion>2.0</wtpversion>
-          <wtpContextName>XXXX</wtpContextName>
+          <wtpContextName>WebApp</wtpContextName>
         </configuration>
       </plugin>
--->
 
-<!-- openejb
-      <plugin>
-        <groupId>org.apache.openejb.maven</groupId>
-        <artifactId>tomee-maven-plugin</artifactId>
-        <configuration>
-          <context>ROOT</context>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.openjpa</groupId>
-        <artifactId>openjpa-maven-plugin</artifactId>
-        <configuration>
-          <includes>**/entities/*.class</includes>
-          <excludes>**/entities/XML*.class</excludes>
-          <addDefaultConstructor>true</addDefaultConstructor>
-          <enforcePropertyRestrictions>true</enforcePropertyRestrictions>
-        </configuration>
-        <executions>
-          <execution>
-            <id>enhancer</id>
-            <phase>process-classes</phase>
-            <goals>
-              <goal>enhance</goal>
-            </goals>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.openjpa</groupId>
-            <artifactId>openjpa</artifactId>
-            <version>${version.openjpa}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
--->
     </plugins>
   </build>
 
